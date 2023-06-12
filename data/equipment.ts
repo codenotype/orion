@@ -1,7 +1,3 @@
-import dm8000main from '../public/images/dm8000/dm8000.png'
-import dm8000ManSitting from '../public/images/dm8000/dm8000_man_sitting.png'
-import dm8000CloseWafer from '../public/images/dm8000/dm8000_close_wafer.png'
-
 export type EquipmentCard = {
   id: string
   images: string[],
@@ -209,6 +205,7 @@ export const equipment: Record<string, EquipmentCard> = {
   dm8000: {
     id: 'dm8000',
     tags: [
+      'микроскоп',
       'микроэлектроника',
       'кремнивые пластины',
       'wafer',
@@ -320,6 +317,7 @@ export const equipment: Record<string, EquipmentCard> = {
   dm750: {
     id: 'dm750',
     tags: [
+      'микроскоп',
       'биология',
       'бюджетный',
       'переносной',
