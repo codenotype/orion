@@ -12,11 +12,13 @@ import {
   Image,
   Grid,
   GridItem,
+  Box,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import Details from '../common/Details';
 import RequestModal from '../modals/RequestModal';
 import RequestButton from '../buttons/RequestButton';
+import { useParams } from 'next/navigation';
 
 export type DeviceCard = {
   eq: EquipmentCard;
@@ -26,6 +28,8 @@ export type DeviceCard = {
 };
 
 export default function DeviceCard({ eq, tagsH, sectionUrl, full }: DeviceCard) {
+  const params = useParams();
+
   return (
     <Card
       className="section-card"
@@ -34,7 +38,12 @@ export default function DeviceCard({ eq, tagsH, sectionUrl, full }: DeviceCard) 
       flex={{ sm: '1 1 49%', xl: '1 1 24%' }}
     >
       <CardHeader pb={0} pt={2}>
-        <Heading color="red.600">{eq.model}</Heading>
+        <Flex gap={2} align={'center'}>
+          <Heading color="red.600">{eq.model}</Heading>
+          <Box transform={'translateY(2px)'}>
+            <RequestButton showIcon={Boolean(params?.model)} />
+          </Box>
+        </Flex>
         <Text fontSize={12} fontWeight={500}>
           {eq.area}
         </Text>
@@ -96,7 +105,7 @@ export default function DeviceCard({ eq, tagsH, sectionUrl, full }: DeviceCard) 
         </Flex>
       </CardBody>
       <CardFooter pt={0} flexDirection={'column'} gap={2}>
-        <RequestButton full={full} title={eq.model} />
+        <RequestButton full={full} title={eq.model} showButton />
         <Flex gap={2} justify={'space-between'}>
           {/*           <Button flex="1 1 auto" variant="outline">
             Характеристики
