@@ -1,13 +1,10 @@
 'use client';
 
 import './globals.css';
-import { Inter } from 'next/font/google';
 import { Providers } from './providers';
 import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Create Next App',
