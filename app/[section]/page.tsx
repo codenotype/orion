@@ -3,21 +3,9 @@
 import DeviceCard from '@/components/cards/DeviceCard';
 import { equipment } from '@/data/equipment';
 import { tr } from '@/data/translate';
-import {
-  Box,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Divider,
-  Flex,
-  Heading,
-  Image,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { useParams } from 'next/navigation';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export type SectionProps = {
   data: any[];
@@ -55,12 +43,16 @@ export default function Page() {
       <Flex wrap={'wrap'} gap={2}>
         {sectionCards.map((eq, i) => {
           return (
-            <DeviceCard
+            <Box
               key={`${eq.model}-${i}`}
-              eq={eq}
-              tagsH={maxHeight}
-              sectionUrl={(p?.section as string) || ''}
-            />
+              flex={{ sm: '1 1 100%', md: '1 1 49%', xl: '1 1 24%' }}
+            >
+              <DeviceCard
+                eq={eq}
+                tagsH={maxHeight}
+                sectionUrl={(p?.section as string) || ''}
+              />
+            </Box>
           );
         })}
       </Flex>

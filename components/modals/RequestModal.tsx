@@ -20,9 +20,9 @@ const RequestModal: React.FC<{
   const { isOpen, onClose } = props;
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
-      <ModalContent w={'90%'}>
+      <ModalContent>
         <ModalHeader>Оставить заявку</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
@@ -32,12 +32,7 @@ const RequestModal: React.FC<{
           </FormControl>
 
           <FormControl mt={4}>
-            <FormLabel>Телефон</FormLabel>
-            <Input />
-          </FormControl>
-
-          <FormControl mt={4}>
-            <FormLabel>Электронная почта</FormLabel>
+            <FormLabel>Телефон или почта</FormLabel>
             <Input />
           </FormControl>
 
