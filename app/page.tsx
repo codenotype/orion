@@ -1,7 +1,5 @@
 'use client';
 
-import styles from './page.module.css';
-import Link from 'next/link';
 import { homecards } from '@/data/homecards';
 import HomeCard from '@/components/cards/HomeCard';
 import {

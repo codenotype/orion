@@ -1,10 +1,5 @@
-'use client';
-
+import ClientLayout from './clientLayout';
 import './globals.css';
-import { Providers } from './providers';
-import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
-import Header from '@/components/header/Header';
-import Footer from '@/components/footer/Footer';
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,22 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Providers>
-          <Box></Box>
-          <Grid
-            minH={'100vh'}
-            templateRows={'60px auto 100px'}
-            templateColumns={'1ft'}
-          >
-            <GridItem pos='sticky' top={0} zIndex={1000}>
-              <Header />
-            </GridItem>
-            <GridItem>{children}</GridItem>
-            <GridItem>
-              <footer><Footer /></footer>
-            </GridItem>
-          </Grid>
-        </Providers>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
